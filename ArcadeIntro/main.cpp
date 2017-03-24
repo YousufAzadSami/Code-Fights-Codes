@@ -71,11 +71,34 @@ void adjacentElementsProductInput()
     std::cout << adjacentElementsProduct(_temp3) << std::endl;
 }
 
+int shapeArea(int n) {
+    // for n = 1, number of boxes is 1
+    int _numberOfBoxes = 1;
+    // With addition of each layer, additional layer of boxes are added
+    // This number of boxes increases by 4 plus the increment amount for (n-1)
+    int _incrementAmountComparedToLastIncrement = 4;
+
+    for(int i = 0; i < n; i++)
+    {
+        _numberOfBoxes = _numberOfBoxes + (i * _incrementAmountComparedToLastIncrement);
+    }
+
+    return _numberOfBoxes;
+}
+
+void shapeAreaInput()
+{
+    std::cout << "n = 1 : " << shapeArea(1) << std::endl;
+    std::cout << "n = 2 : " << shapeArea(2) << std::endl;
+    std::cout << "n = 3 : " << shapeArea(3) << std::endl;
+    std::cout << "n = 4 : " << shapeArea(4) << std::endl;
+}
+
 int main()
 {
     std::cout << "Hello world!" << std::endl;
 
-    adjacentElementsProductInput();
+    shapeAreaInput();
 
     return 0;
 }
